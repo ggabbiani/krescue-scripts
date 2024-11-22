@@ -12,7 +12,7 @@ Fedora is a Linux distribution developed by the community-supported
 Fedora Project which is sponsored primarily by Red Hat, a subsidiary of
 IBM, with additional support from other companies.
 
-    REL= 41-1.4 | 36-1.5 | 35-1.2 | 34-1.2 | 33-1.3
+    REL= 41-1.4 | 39-1.5 | 36-1.5 | 35-1.2 | 34-1.2 | 33-1.3
     TYPES=Server | Workstation
 " #DESCRIPTION_END
 
@@ -86,6 +86,7 @@ TITLE="Fedora Linux $REL installation for: $BOARD ..."
     "Select fedora Release:" 0 0 0 \
     "41-1.4" "" \
     "36-1.5" "" \
+    "36-1.5" "" \
     "35-1.2" "" \
     "34-1.2" "" \
     "33-1.3" "" \
@@ -116,6 +117,8 @@ TITLE="Fedora Linux $REL installation for: $BOARD ..."
 
 echo "$TITLE +$TYPE > $DST"
 echo "$BOARDS" | grep -q -m1 "$BOARD" || FAIL "not suitable for this $BOARD device"
+
+set -x
 
 # checks
 # echo "check network connection..."
